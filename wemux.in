@@ -56,11 +56,7 @@ allow_rogue_mode="true"
 default_client_mode="mirror"
 allow_kick_user="true"
 allow_server_change="false"
-if [ "$allow_server_change" == "true" ]; then
-  default_server_name="${USER}"
-else
-  default_server_name="wemux"
-fi
+default_server_name="wemux"
 allow_server_list="true"
 allow_user_list="true"
 announce_attach="true"
