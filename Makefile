@@ -11,7 +11,7 @@ DOCDIR?=$(DATAROOTDIR)/doc/wemux
 %: %.in
 	sed   's,$$(DOCDIR),$(DOCDIR),g' '$<'     | \
 	  sed 's,$$(MANDIR),$(MANDIR),g'          | \
-	  sed 's,$$(SYSCONFDIR),$(SYSCONFDIR),g'  | \
+	  sed 's,$$(SYSCONFDIR),$(SYSCONFDIR),g'  \
 	  > '$@'
 
 install: wemux man/wemux.1
