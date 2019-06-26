@@ -56,14 +56,18 @@ allow_rogue_mode="true"
 default_client_mode="mirror"
 allow_kick_user="true"
 allow_server_change="false"
-default_server_name="wemux"
+if [ "$allow_server_change" == "true" ]; then
+  default_server_name="${USER}"
+else
+  default_server_name="wemux"
+fi
 allow_server_list="true"
 allow_user_list="true"
 announce_attach="true"
 announce_server_change="true"
 
 # Prevent users from changing their $USER env variable to become host.
-username=`whoami`
+username=$(whoami)
 # Set $EDITOR default to vi if not configured on host machine.
 editor=${EDITOR:="vi"}
 
@@ -95,7 +99,7 @@ load_server_name() {
       fi
     else
       # If ~/.wemux_last_server doesn't exist set to default_server_name-user
-      server="${default_server_name}-${USER}"
+      server="${default_server_name}"
     fi
   else
     # If allow_server_change is disabled, set to default_server_name

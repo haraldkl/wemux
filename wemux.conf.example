@@ -47,7 +47,8 @@
 
 ## Set name for default wemux server. Will be used with wemux reset and
 ## when allow_server_change is disabled.
-## Defaults to "wemux"
+## Defaults to "wemux" if allow_server_change="false"
+## and to "${USER}" if allow_server_change="true"
 # default_server_name="customname"
 
 ## Allow users to list all currently running wemux sockets/servers.
